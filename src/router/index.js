@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Form from '../components/Form.vue'
+import FormUpdate from '../components/Form.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,11 @@ const routes = [{
         path: '/addService',
         name: 'AddService',
         component: Form
+    },
+    {
+        path: '/updateService',
+        name: 'UpdateService',
+        component: FormUpdate
     },
 ]
 

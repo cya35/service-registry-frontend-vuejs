@@ -2,7 +2,8 @@
     <tr>
         <td>
             <button id="updateBtn" class="favorite styled"
-                    type="button" v-on:click="putNewValue(service)">
+                    type="button" v-on:click="updateService(service)"
+                    >
                 {{ updateBtn }}
             </button>
         </td>
@@ -39,9 +40,9 @@ export default {
         */
     },
     methods: {
-        putNewValue: function(service) {
+        updateService: function(service) {
             //renvoie vers un form de récupération des nouvelles valeurs
-            console.log(service._id);
+            this.$router.push('/updateService/'+ service._id);
         },
 
         deleteItem: function(service) {
