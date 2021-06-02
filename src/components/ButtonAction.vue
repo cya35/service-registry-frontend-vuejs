@@ -8,7 +8,7 @@
         </td>
         <td>
             <button id="deleteBtn" class="favorite styled"
-                    type="button">
+                    type="button" V-on:click="deleteItem()">
                 {{ deleteBtn }}
             </button>
         </td>
@@ -16,15 +16,18 @@
 </template>
 
 <script>
-//import axios from 'axios';
+import axios from 'axios';
 
 export default {
     name: 'ButtonAction',
+    props: [ 'service' ],
+    components: {
+    },
     data () {
         return {
             updateBtn: "Modifier",
             deleteBtn: "Supprimer",
-            idItem: "null"
+            idItem: "null",
         }
     },
     mounted () {
@@ -36,23 +39,21 @@ export default {
             })
         */
     },
-    computed: {
-        getItemId: function() {
-            //Récupération de l'id de la ligne
-            //Assigner à item id, l'id récupéré
-            return "" ;
-        },
-
+    methods: {
         putNewValue: function() {
-            //Récupération de l'objet
-            //Modification les valeurs
-            //Mettre à jour les valeurs
+            //renvoie vers un form de récupération des nouvelles valeurs
             return "";
         },
 
         deleteItem: function() {
-            //delete l'item
-            return "";
+            console.log('http://localhost:4000/api/services/' + this.service._id);
+            axios
+            .delete('http://localhost:4000/api/services/' + this.service._id)
+            .then((response) => {
+                console.log(response);
+            }, (error) => {
+                console.log(error);
+            });
         }
     }
 }

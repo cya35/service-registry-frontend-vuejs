@@ -29,7 +29,7 @@ export default {
             .get('http://localhost:4000/api/services')
             .then(response => {
                 this.services = response.data;
-            })
+            });
     }
 }
 </script>

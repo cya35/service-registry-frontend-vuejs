@@ -51,6 +51,7 @@ export default {
             })
             .then((response) => {
                 console.log(response);
+                this.$router.push('/');
             }, (error) => {
                 console.error(error)
             });

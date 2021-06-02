@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
     <ServiceList/>
     <Button @click="getForm()"> Add service</Button>
   </div>
@@ -23,3 +22,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.home {
+  display: flex;
+}
+</style>
