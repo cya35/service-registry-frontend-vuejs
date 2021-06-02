@@ -6,14 +6,12 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import ServiceList from '@/components/ServiceList.vue'
 
 export default {
   name: 'Home',
   components: {
     ServiceList,
-    
   },
   methods: {
     getForm() {

@@ -3,7 +3,8 @@
         <ListHeader />
         <Item  v-for="service in services" 
             v-bind:service="service"
-            v-bind:key="service._id"> 
+            v-bind:key="service._id"
+            v-bind:onServiceDeleted="onServiceDeleted"> 
         </Item>
     </table>
 </template>
@@ -30,6 +31,14 @@ export default {
             .then(response => {
                 this.services = response.data;
             });
+    },
+    methods: {
+        onServiceDeleted(service) {
+            const pos = this.services.indexOf(service);
+            if(pos >= 0) {
+                this.services.splice(pos, 1);
+            }
+        }
     }
 }
 </script>

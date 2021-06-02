@@ -13,7 +13,7 @@
             {{ service.status }}
         </td>
         <td>
-            <ButtonAction />
+            <ButtonAction v-bind:service="service" v-bind:onServiceDeleted="onServiceDeleted"/>
         </td>
     </tr>
 </template>
@@ -26,6 +26,6 @@ export default {
     components: {
         ButtonAction
     },
-    props: [ 'service' ]
+    props: [ 'service', 'onServiceDeleted' ]
 }
 </script>
