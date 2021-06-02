@@ -2,8 +2,8 @@
     <table id="serviceList">
         <ListHeader />
         <Item  v-for="service in services" 
-               v-bind:service="service"
-               v-bind:key="service._id"> 
+            v-bind:service="service"
+            v-bind:key="service._id"> 
         </Item>
     </table>
 </template>

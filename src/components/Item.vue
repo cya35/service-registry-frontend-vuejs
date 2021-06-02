@@ -1,5 +1,5 @@
 <template>
-    <tr>
+    <tr >
         <td>
             {{ service.name }}
         </td>
@@ -7,19 +7,25 @@
             {{ service.location }}
         </td>
         <td>
-            {{ service.decription }}
+            {{ service.description }}
         </td>
         <td>
             {{ service.status }}
         </td>
-        
+        <td>
+            <ButtonAction />
+        </td>
     </tr>
 </template>
 
 <script>
+import ButtonAction from './ButtonAction.vue';
 
 export default {
     name: 'Item',
+    components: {
+        ButtonAction
+    },
     props: [ 'service' ]
 }
 </script>
