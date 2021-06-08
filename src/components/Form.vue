@@ -1,20 +1,23 @@
 <template>
     <form @submit="sendValue($event)">
-        <label for="name">Nom :</label>
+        <h4>Ajouter un nouveau service</h4>
+        <br><br>
+        <label for="name">Nom </label>
         <input id="name" type="text" v-model="name">
-
-        <label for="location">Location :</label>
+        <br><br>
+        <label for="location">Location </label>
         <input id="location" type="text" v-model="location">
-
-        <label for="description">Description :</label>
+        <br><br>
+        <label for="description">Description </label>
         <input id="description" type="text" v-model="description">
-
-        <label for="status">Statut :</label>
+        <br><br>
+        <label for="status">Statut </label>
         <select name="status" id="status" v-model="status">
             <option v-for="option in options" v-bind:key="option.value">
                 {{option.text}}
             </option>
         </select>
+        <br><br>
         <Button>Envoyer</Button>
     </form>
 </template>
@@ -26,10 +29,8 @@ export default {
     name: 'Form',
     components: {
     },
- 
     data () {
         return {
-            services: null,
             name:  "",
             location: "",
             description: "",
